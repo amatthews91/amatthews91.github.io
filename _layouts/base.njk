@@ -1,0 +1,124 @@
+---
+layout: layouts/base.njk
+---
+
+<header>
+  <h1>{{ siteTitle }}</h1>
+  <p>A blog showcasing thoughts on technology and development.</p>
+</header>
+
+<main>
+  <h2>Recent Articles</h2>
+
+  {% for post in collections.blog %}
+  <article class="blog-card">
+    <div class="card-content">
+      <h3><a href="/blog/{{ post.path|replace('_(posts)/', '') }}.html">{{ post.title }}</a></h3>
+      <p class="meta">Published on {{ post.date }}</p>
+      <p class="excerpt">{{ post.excerpt }}</p>
+    </div>
+    <a href="/blog/{{ post.path|replace('_(posts)/', '') }}.html" class="read-more">Read More →</a>
+  </article>
+  {% endfor %}
+
+</main>
+
+<footer>
+  <p>&copy; {{ date }} {{ siteTitle }}. Powered by Eleventy.</p>
+</footer>
+
+<style>
+  /* --- BASE STYLES (Mimicking basic site structure) --- */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('img/space.gif');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff; /* Light text color for contrast */
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    color: #e0f7fa;
+  }
+
+  /* --- CARD STYLING --- */
+  .blog-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+  }
+
+  .blog-card:last-of-type {
+    border-bottom: none;
+  }
+
+  .card-content {
+    flex-basis: 70%;
+  }
+
+  .card-content h3 a {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-size: 1.8em;
+  }
+
+  .card-content h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .meta {
+    font-size: 0.9em;
+    color: #aaaaaa;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .excerpt {
+    color: #ccc;
+  }
+
+  .read-more {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #4fc3f7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .read-more:hover {
+    background-color: #29b6f6;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    color: #999;
+  }
+</style>

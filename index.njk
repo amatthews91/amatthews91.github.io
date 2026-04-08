@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+
+{# The main content will go here #}
+
+<h2>Latest Posts</h2>
+<div class="blog-listing">
+  {% for post in collections.blog %}
+  <div class="blog-card">
+    <div class="card-content">
+      <h3><a href="/blog/{{ post.path|replace('_(posts)/', '') }}.html">{{ post.data.title }}</a></h3>
+      <p class="meta">Published on {{ post.date }}</p>
+      <p class="excerpt">{{ post.data.excerpt }}</p>
+    </div>
+    <a href="/blog/{{ post.path|replace('_(posts)/', '') }}.html" class="read-more">Read More →</a>
+  </div>
+  {% endfor %}
+</div>
+
+{% extends "layouts/base.njk" %}

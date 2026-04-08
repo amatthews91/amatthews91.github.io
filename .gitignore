@@ -1,0 +1,14 @@
+# Node/JS Dependencies
+
+# Dependencies
+/node_modules
+
+# Build artifacts
+/dist
+/_site
+/build
+
+# Logs and temporary files
+*.log
+.env
+.DS_Store
