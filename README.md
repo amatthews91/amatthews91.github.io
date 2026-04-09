@@ -1,74 +1,46 @@
- கட்டி
-# 🚀 Personal Blog - Built with Eleventy
+# Astro Starter Kit: Basics
 
-This repository hosts a personal blog built using [Eleventy](https://www.11ty.dev/). It is a static site generated from Markdown content, making it fast, secure, and ideal for content-focused websites.
+```sh
+npm create astro@latest -- --template basics
+```
 
-## 📚 Structure Overview
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-The repository is organized to separate configuration, templates, and content sources:
+## 🚀 Project Structure
 
-*   `index.njk`: The main template for the root page, which displays the list of all blog posts.
-*   `_posts/`: **(Content Source)** This directory holds all individual blog posts. Each Markdown file in this folder is automatically processed by Eleventy.
-*   `_includes/`: Partial files used across multiple templates for reusable components (e.g., headers, footers, reusable card components).
-*   `_layouts/`: Contains the main layout templates for the site.
-*   `eleventy.js`: The primary configuration file for Eleventy, telling it where to find content and how to build the site.
-*   `package.json`: Defines the project dependencies and build scripts.
+Inside of your Astro project, you'll see the following folders and files:
 
-## 🚀 Getting Started
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
-**Prerequisites:**
-*   Node.js and npm installed on your machine.
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-**Installation:**
-1.  Clone this repository to your local machine.
-2.  Navigate into the project directory:
-    ```bash
-    cd amatthews91.github.io
-    ```
-3.  Install the necessary dependencies:
-    ```bash
-    npm install
-    ```
+## 🧞 Commands
 
-**Running the Blog:**
-1.  To run the development server (for live previewing):
-    ```bash
-    npm run serve
-    ```
-    *(Note: This assumes we set up a `serve` script in `package.json`)*
-2.  To generate the final, optimized static HTML files (for deployment to GitHub Pages):
-    ```bash
-    npm run build
-    ```
-    The generated files will be placed in the build output directory (usually `_site/`).
+All commands are run from the root of the project, from a terminal:
 
-## 🗒️ Writing & Contributing
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-1.  **Creating a New Post:**
-    *   Create a new file in the `_posts/` directory.
-    *   The file must use **YAML Front Matter** at the very top to provide metadata.
+## 👀 Want to learn more?
 
-    **Example:**
-    ```markdown
-    ---
-    title: My Awesome New Post
-    date: 2026-04-08
-    excerpt: A short summary used on the homepage card.
-    ---
-
-    # Main Content Goes Here
-
-    Write your full article content in standard Markdown.
-    ```
-
-2.  **Contribution:**
-    *   If you wish to modify the design, edit the templates located in `_includes/` or create new layouts in `_layouts/`.
-    *   All changes should result in a clean, static output; avoid writing JavaScript that requires a backend server to function.
-    *   Please open a new Issue or submit a Pull Request detailing the changes you want to make.
-
----
-*This site is built with Eleventy.*
-\
-[github:amatthews91/amatthews91.github.io](https://github.com/amatthews91/amatthews91.github.io)
-<!-- End of README content -->\
-"
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
