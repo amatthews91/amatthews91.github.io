@@ -37,6 +37,7 @@ jobs:
         run: |
           npm ci
           npm run build
+      - name: Upload build folder
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
